@@ -3,7 +3,7 @@ This module has been designed to offer a simple introduction and repository of s
 
 # CPMD
 
-A working makefile to compile cpmd is stored here as reference
+A working makefile to compile cpmd is stored here as reference (File called Makefile)
 
 
 # EXAMPLES:
