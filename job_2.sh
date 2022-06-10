@@ -1,11 +1,11 @@
 #!/bin/bash -l
 #$ -l h_rt=1:00:00
-#$ -l mem=4G
-#$ -pe mpi 40
+#$ -l mem=4.5G
+#$ -pe mpi #NUMBER_OF_CORES_MULTIPLES_OF_40   1 Node == 40 cores, 2 Nodes == 80 cores and so on
 #$ -N orca
-#$ -A KCL_pilot
-#$ -P Free
-#$ -wd /home/mmm0666/orca
+#$ -A  # KCL_YOUR_GROUP_NAME
+#$ -P Gold
+#$ -cwd 
 
 
 module unload default-modules/2018
