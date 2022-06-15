@@ -13,7 +13,7 @@
 # OMP_NUM_THREADS. Depending on the problem it can be, 1 or 20.
 # rearely something in between will have gains. 
 
-export OMP_NUM_THREADS=20 #$(ppn)
+export OMP_NUM_THREADS=1 #$(ppn)
 
 # gerun is an alias for mpirun -np .... with fine-tuned options of the command
 gerun ./run_nvt
