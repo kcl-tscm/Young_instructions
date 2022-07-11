@@ -1,0 +1,54 @@
+@SET SYSNAME                mol
+
+&GLOBAL
+  PRINT_LEVEL LOW
+  PROJECT porphyrin
+  RUN_TYPE GEO_OPT                # Geometry optimization calculation
+&END GLOBAL
+
+&MOTION
+  &GEO_OPT                        # Parameters for GEO_OPT convergence
+    MAX_FORCE 1.0E-6
+    MAX_ITER 2000
+    OPTIMIZER BFGS
+    &BFGS
+      TRUST_RADIUS [bohr] 0.1
+    &END
+  &END GEO_OPT
+&END MOTION
+
+&FORCE_EVAL
+  METHOD Quickstep                # Quickstep - Electronic structure methods
+  &DFT
+   CHARGE 0                      
+    &QS
+      METHOD PM6                  # Parametrization Method 6
+      &SE
+      &END SE
+    &END QS
+    &SCF                          # Convergence parameters for force evaluation
+      SCF_GUESS ATOMIC
+      EPS_SCF 1.0E-6
+      MAX_SCF 50
+       &OUTER_SCF
+          EPS_SCF 1.0E-7
+          MAX_SCF 500
+       &END
+    &END SCF
+    &POISSON                      # POISSON solver for non-periodic calculation
+      PERIODIC NONE
+      PSOLVER  MT                 # For problematic cases the WAVELET can be used instead
+    &END
+  &END DFT
+
+  &SUBSYS
+    &CELL
+      ABC 45.0 45.0 45.0
+      PERIODIC NONE
+    &END CELL
+    &TOPOLOGY
+     COORD_FILE_FORMAT XYZ
+     COORD_FILE_NAME ${SYSNAME}.xyz
+    &END TOPOLOGY
+  &END SUBSYS
+&END FORCE_EVAL
