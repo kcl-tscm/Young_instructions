@@ -26,7 +26,7 @@ Among other capabilities.
 Structure of this Repo:
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The different folders contain different kind of working and test input files. The user can copy and paste the inputs or transfer them to Young
+The different folders contain different kind of working input files. The user can copy and paste the inputs or transfer them to Young
 via the git clone command. The calculatations are divided in the following manner:
 
 * Geo_Opt: This folder contains the geometry optimization inputs of isolated (gas-phase) at different levels of theory, namely, PM6, BLYP (GGA-DFT) 
