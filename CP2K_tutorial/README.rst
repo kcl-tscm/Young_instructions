@@ -29,14 +29,14 @@ Structure of this Repo:
 The different folders contain different kind of working input files. The user can copy and paste the inputs or transfer them to Young
 via the git clone command. The calculatations are divided in the following manner:
 
-1 Geo_Opt: This folder contains the geometry optimization inputs of isolated (gas-phase) at differen PM6, BLYP 
+1. **Geo_Opt:** This folder contains the geometry optimization inputs of isolated (gas-phase) at differen PM6, BLYP 
 (GGA-DFT), and B3LYP (via LibXC )
 
-2 SP: Single point calculation using the B3LYP excahnge-corrrelation via LibXC library.
+2. **SP:** Single point calculation using the B3LYP excahnge-corrrelation via LibXC library.
 
-3 MD: AIMD calculation of a gas-phase molecule. This empoys the NVT thermostat (Nose-Hoover) at a temperature of 300K.
+3. **MD:** AIMD calculation of a gas-phase molecule. This empoys the NVT thermostat (Nose-Hoover) at a temperature of 300K.
 
-4 TD-DFT: Includes 3 folders, where calculations using TD-DFT, TD-DFPT and LR-TDDFT are used.
+4. **TD-DFT:** Includes 3 folders, where calculations using TD-DFT, TD-DFPT and LR-TDDFT are used.
 
 All folders contain the file **job.sh**, which includes a template of a submission file to be used with Young.
 
