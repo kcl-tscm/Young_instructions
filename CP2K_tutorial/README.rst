@@ -29,8 +29,8 @@ Structure of this Repo:
 The different folders contain different kind of working input files. The user can copy and paste the inputs or transfer them to Young
 via the git clone command. The calculatations are divided in the following manner:
 
-* Geo_Opt: This folder contains the geometry optimization inputs of isolated (gas-phase) at different levels of theory, namely, PM6, BLYP (GGA-DFT) and 
-B3LYP using libxc library.
+* Geo_Opt: This folder contains the geometry optimization inputs of isolated (gas-phase) at different levels of theory. PM6, BLYP (GGA-DFT) and B3LYP 
+using libxc library.
 
 * SP: Single point calculation using the B3LYP excahnge-corrrelation via LibXC library.
 
