@@ -8,10 +8,7 @@ calculation.The program is able to perform the following calculations:
 
 1. *Ab-initio* Molecular Dynamics (AIMD) for different ranges of system in both  Periodic Boundary Condition (PBC) and gas-phase systems.
 
-2. Excited state calculations, in different flavours, namely:
-  * TD-DFT
-  * TD-DFPT
-  * LR-TDDFT
+2. Excited state calculations using **TD-DFPT**
   
 3. PBC and gas-phase geometry optimizations. The calculations includes Cell optimization, Phonon calculations 
 (using the supercell method for non Gamma-points)
@@ -36,7 +33,7 @@ and B3LYP (via LibXC )
 
 3. **MD:** AIMD calculation of a gas-phase molecule. This empoys the NVT thermostat (Nose-Hoover) at a temperature of 300K.
 
-4. **TD-DFT:** Includes 3 folders, where calculations using TD-DFT, TD-DFPT and LR-TDDFT are used.
+4. **TD-DFT:** where a TDDFPT calcilation is performed.
 
 All folders contain the file **job.sh**, which includes a template of a submission file to be used with Young.
 
