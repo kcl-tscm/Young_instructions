@@ -1,0 +1,174 @@
+@SET SYSNAME                mol
+
+&GLOBAL
+  PROJECT porp_1
+  PRINT_LEVEL LOW
+  RUN_TYPE MD
+  EXTENDED_FFT_LENGTHS
+&END GLOBAL
+
+&FORCE_EVAL
+  STRESS_TENSOR NUMERICAL
+  METHOD Quickstep
+  &DFT
+    BASIS_SET_FILE_NAME /shared/ucl/apps/cp2k/7.1/gnu-4.9.2/cp2k-7.1/data/BASIS_MOLOPT
+    POTENTIAL_FILE_NAME /shared/ucl/apps/cp2k/7.1/gnu-4.9.2/cp2k-7.1/data/GTH_POTENTIALS
+    BASIS_SET_FILE_NAME /shared/ucl/apps/cp2k/7.1/gnu-4.9.2/cp2k-7.1/data/BASIS_ADMM
+    BASIS_SET_FILE_NAME /shared/ucl/apps/cp2k/7.1/gnu-4.9.2/cp2k-7.1/data/BASIS_ADMM_MOLOPT
+    BASIS_SET_FILE_NAME /shared/ucl/apps/cp2k/7.1/gnu-4.9.2/cp2k-7.1/data/EMSL_BASIS_SETS
+    CHARGE 0
+    &MGRID
+      CUTOFF 500
+      REL_CUTOFF 50
+    &END MGRID
+    &QS
+      METHOD GPW
+      EPS_PGF_ORB 1.0E-50
+    &END QS
+    &AUXILIARY_DENSITY_MATRIX_METHOD
+      METHOD BASIS_PROJECTION
+      ADMM_PURIFICATION_METHOD MO_DIAG
+    &END
+    &POISSON
+     PERIODIC NONE
+     POISSON_SOLVER MT
+    &END
+    &SCF
+     SCF_GUESS ATOMIC
+     EPS_SCF 1.0E-5
+     MAX_SCF 100
+     &OT ON
+        CHOLESKY INVERSE
+        MINIMIZER  CG
+     &END OT
+     &OUTER_SCF
+       MAX_SCF 35
+       EPS_SCF  1.0E-3
+     &END OUTER_SCF
+    &END SCF
+    ! B3LYP function with libxc
+    &XC
+      &XC_FUNCTIONAL
+        &LIBXC
+          FUNCTIONAL XC_HYB_GGA_XC_B3LYP
+        &END LIBXC
+      &END XC_FUNCTIONAL
+      &HF
+        &SCREENING
+          EPS_SCHWARZ 1.0E-10
+        &END
+        !&MEMORY
+        ! This is the maximum memory for each processor in MBi, I just comment it but
+        ! you can obtain it through computing the memory you ask in the slurm file
+        ! divided by the number of processors.
+        !  MAX_MEMORY  10000
+        !  EPS_STORAGE_SCALING 0.1
+        !&END MEMORY
+        FRACTION 0.20
+      &END
+      ! In CP2K versions lower than v7, this part is required for TDDFT calculations
+      &XC_GRID
+        XC_DERIV SPLINE2_SMOOTH
+      &END XC_GRID
+      &VDW_POTENTIAL
+         POTENTIAL_TYPE PAIR_POTENTIAL 
+         &PAIR_POTENTIAL
+            PARAMETER_FILE_NAME /shared/ucl/apps/cp2k/7.1/gnu-4.9.2/cp2k-7.1/data/dftd3.dat
+            TYPE DFTD3
+            REFERENCE_FUNCTIONAL BLYP
+            R_CUTOFF [angstrom] 16
+         &END
+      &END VDW_POTENTIAL
+    &END XC
+    &PRINT
+     ! at the end of the SCF procedure generate cube files of the density
+!     &E_DENSITY_CUBE OFF
+!     &END E_DENSITY_CUBE
+     ! compute eigenvalues and homo-lumo gap each 10nd MD step
+       &MO_CUBES
+          NLUMO 10
+          NHOMO 10
+          WRITE_CUBE .FALSE.
+       &END
+!       &PDOS
+!         FILENAME PDOS-TMAA
+!         COMPONENTS .TRUE.
+!         NLUMO 200
+!         &LDOS
+!          COMPONENTS .TRUE.
+!        &END LDOS
+!       &END PDOS
+    &END PRINT
+  &END DFT
+  &SUBSYS
+    &CELL
+      ABC 45.0 45.0 45.0
+      PERIODIC NONE
+    &END CELL
+    &TOPOLOGY
+     COORD_FILE_FORMAT XYZ
+     COORD_FILE_NAME ${SYSNAME}.xyz
+    &END TOPOLOGY
+    &KIND H
+      BASIS_SET DZVP-MOLOPT-SR-GTH
+      BASIS_SET AUX_FIT cFIT3
+      POTENTIAL GTH-PBE-q1
+    &END KIND
+    &KIND C
+      BASIS_SET DZVP-MOLOPT-SR-GTH
+      BASIS_SET AUX_FIT cFIT3
+      POTENTIAL GTH-PBE-q4
+    &END KIND
+    &KIND N
+      BASIS_SET DZVP-MOLOPT-SR-GTH
+      BASIS_SET AUX_FIT cFIT3
+      POTENTIAL GTH-PBE-q5
+    &END KIND
+    &KIND F
+      BASIS_SET DZVP-MOLOPT-SR-GTH
+      BASIS_SET AUX_FIT cFIT3
+      POTENTIAL GTH-PBE-q7
+    &END KIND
+  &END SUBSYS
+&END FORCE_EVAL
+&MOTION
+  &PRINT
+     &TRAJECTORY
+        &EACH
+          MD 10
+        &END EACH
+     &END TRAJECTORY
+  &END PRINT
+  &MD
+   ENSEMBLE NVT
+   TIMESTEP 0.5
+   STEPS    2000
+   TEMPERATURE 300 
+   &THERMOSTAT
+     &NOSE
+       LENGTH 3
+       YOSHIDA 3
+       TIMECON 1000
+       MTS 2
+     &END NOSE
+   &END
+!   &PRINT 
+!     &ENERGY OFF
+!     &END ENERGY
+!     &PROGRAM_RUN_INFO OFF
+!     &END PROGRAM_RUN_INFO
+!   &END PRINT
+ &END MD
+! &PRINT 
+!  &TRAJECTORY ON
+!  &END
+!  &VELOCITIES ON
+!  &END VELOCITIES
+!  &FORCES OFF
+!  &END FORCES
+!  &RESTART_HISTORY OFF
+!  &END RESTART_HISTORY 
+!  &RESTART OFF
+!  &END RESTART
+! &END PRINT
+&END MOTION
