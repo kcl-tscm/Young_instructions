@@ -8,7 +8,7 @@ calculation.The program is able to perform the following calculations:
 
 1. *Ab-initio* Molecular Dynamics (AIMD) for different ranges of system in both  Periodic Boundary Condition (PBC) and gas-phase systems.
 
-2. Exciated state calculations, in different flavours, namely:
+2. Excited state calculations, in different flavours, namely:
   * TD-DFT
   * TD-DFPT
   * LR-TDDFT
