@@ -1,0 +1,96 @@
+@SET SYSNAME                mol
+
+&GLOBAL
+  PROJECT porp_1
+  PRINT_LEVEL LOW
+  RUN_TYPE GEO_OPT
+&END GLOBAL
+
+&FORCE_EVAL
+  STRESS_TENSOR NUMERICAL
+  METHOD Quickstep
+  &DFT
+    BASIS_SET_FILE_NAME /shared/ucl/apps/cp2k/7.1/gnu-4.9.2/cp2k-7.1/data/BASIS_MOLOPT
+    POTENTIAL_FILE_NAME /shared/ucl/apps/cp2k/7.1/gnu-4.9.2/cp2k-7.1/data/GTH_POTENTIALS
+    CHARGE 0
+    &MGRID
+      CUTOFF 500
+      REL_CUTOFF 50
+    &END MGRID
+    &QS
+      METHOD GPW
+    &END QS
+    &POISSON
+     PERIODIC NONE
+     POISSON_SOLVER MT                  # For problematic cases, one can use WAVELET
+    &END
+    &SCF 
+     SCF_GUESS ATOMIC 
+     EPS_SCF 1.0E-6 
+     MAX_SCF 150
+     &OT ON
+        CHOLESKY INVERSE	
+	      MINIMIZER  CG
+     &END OT	
+     &OUTER_SCF	
+       MAX_SCF 50	
+       EPS_SCF	1.0E-5
+     &END OUTER_SCF	
+    &END SCF
+! BLYP exchange-correlation
+    &XC
+      &XC_FUNCTIONAL BLYP
+      &END XC_FUNCTIONAL
+      &XC_GRID
+         XC_SMOOTH_RHO  NN10
+         XC_DERIV  SPLINE2_SMOOTH
+      &END XC_GRID
+      &vdW_POTENTIAL
+        DISPERSION_FUNCTIONAL PAIR_POTENTIAL	
+           &PAIR_POTENTIAL
+             TYPE DFTD3
+	           PARAMETER_FILE_NAME  /shared/ucl/apps/cp2k/7.1/gnu-4.9.2/cp2k-7.1/data/dftd3.dat 
+	           REFERENCE_FUNCTIONAL BLYP
+           &END PAIR_POTENTIAL 
+      &END vdW_POTENTIAL
+    &END XC 
+  &END DFT
+  &SUBSYS
+    &CELL
+      ABC 45.0 45.0 45.0
+      PERIODIC NONE
+    &END CELL
+    &TOPOLOGY
+      COORD_FILE_FORMAT XYZ
+      COORD_FILE_NAME ${SYSNAME}.xyz
+    &END TOPOLOGY
+    &KIND H
+      BASIS_SET DZVP-MOLOPT-SR-GTH
+      POTENTIAL GTH-PBE-q1
+    &END KIND
+    &KIND C
+      BASIS_SET DZVP-MOLOPT-SR-GTH
+      POTENTIAL GTH-PBE-q4
+    &END KIND
+    &KIND N
+      BASIS_SET DZVP-MOLOPT-SR-GTH
+      POTENTIAL GTH-PBE-q5
+    &END KIND
+    &KIND F
+      BASIS_SET DZVP-MOLOPT-SR-GTH
+      POTENTIAL GTH-PBE-q7
+    &END KIND
+  &END SUBSYS
+&END FORCE_EVAL
+&MOTION
+  &END CELL_OPT
+  &GEO_OPT
+    TYPE MINIMIZATION
+    MAX_DR    9.0E-03
+    MAX_FORCE 9.0E-03
+    RMS_DR    9.0E-03
+    RMS_FORCE 9.0E-03
+    MAX_ITER 200
+    OPTIMIZER BFGS
+  &END GEO_OPT
+&END MOTION
