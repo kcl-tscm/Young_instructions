@@ -3,7 +3,7 @@
 #$ -l mem=4.5G
 #$ -pe mpi 80
 #$ -N cp2k_tddfpt
-#$ -A KCL_Admin_rse
+#$ -A YOUR_PROJECT
 #$ -P Gold
 #$ -cwd 
 
