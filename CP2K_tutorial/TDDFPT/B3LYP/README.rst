@@ -29,7 +29,7 @@ A complementary calculation has been carried out using **ORCA 4.2.1** employing 
 differences between the jobs, since **ORCA** is an all electron code, whereas **CP2K** uses a pseudo-potential (GTH in this case) approach. The following
 table reports the results between the two programs:
 
-.. list-table:: Title
+.. list-table:: **CP2K** vs **ORCA**
    :header-rows: 1
 
    * - Heading row 1, column 1
