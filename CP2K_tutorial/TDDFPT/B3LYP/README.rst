@@ -30,7 +30,6 @@ differences between the jobs, since **ORCA** is an all electron code, whereas **
 table reports the results between the two programs:
 
 .. list-table:: **CP2K** vs **ORCA**
-   :widths: 25 25 50
    :header-rows: 1
 
    * - SINGLETS
@@ -45,10 +44,35 @@ table reports the results between the two programs:
    * - 3
      - 2.03
      - 2.06
-   
+   * - 4
+     - 2.09
+     - 2.15
+   * - 5
+     - 2.16
+     - 2.20
 
 
+.. list-table:: **CP2K** vs **ORCA**
+   :header-rows: 1
 
+   * - TRIPLETS
+     - CP2K
+     - ORCA
+   * - 1
+     - 1.03
+     - 1.23
+   * - 2
+     - 1.06
+     - 1.29
+   * - 3
+     - 1.61
+     - 1.75
+   * - 4
+     - 1.68
+     - 1.83
+   * - 5
+     - 1.75
+     - 1.86
     
 
 
