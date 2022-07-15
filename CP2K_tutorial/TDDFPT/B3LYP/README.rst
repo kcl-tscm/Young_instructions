@@ -35,13 +35,16 @@ table reports the results between the two programs:
    * - SINGLETS
      - CP2K
      - ORCA
-   * - Row 1, column 1
-     - HOLA
-     - Row 1, column 3
-   * - Row 2, column 1
-     - Row 2, column 2
-     - Row 2, column 3
-     
+   * - 1
+     - 1.76
+     - 1.89
+   * - 2
+     - 1.89
+     - 2.04
+   * - 3
+     - 2.03
+     - 2.06
+   
 
 
 
