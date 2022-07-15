@@ -32,9 +32,9 @@ table reports the results between the two programs:
 .. list-table:: **CP2K** vs **ORCA**
    :header-rows: 1
 
-   * - Heading row 1, column 1
+   * - 1
      - Heading row 1, column 2
-     - Heading row 1, column 3
+     - 3
    * - Row 1, column 1
      - HOLA
      - Row 1, column 3
