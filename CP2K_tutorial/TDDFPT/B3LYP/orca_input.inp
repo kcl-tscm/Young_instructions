@@ -1,0 +1,11 @@
+#
+!b3lyp d3zero def2-tzvp Grid5 FinalGrid6 TightSCF RIJCOSX def2/J
+%tddft
+ nroots 5
+ triplets true
+end
+%PAL
+        NPROCS 40
+END
+%maxcore 4000
+* xyzfile 0 1 mol.xyz
