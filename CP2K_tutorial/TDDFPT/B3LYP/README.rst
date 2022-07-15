@@ -1,4 +1,4 @@
-CP2K excited states calculation via TDDFPT
+CP2K excited-states calculation via TDDFPT:
 ======================================================
 
 In this section, there is an input template to perform time-dependent density function perturbation theory as implemented in CP2K. 
@@ -35,13 +35,13 @@ table reports the results between the two programs:
 
    * - Heading row 1, column 1
      - Heading row 1, column 2
-     - Heading row 1, column 3
+  
    * - Row 1, column 1
-     -
-     - Row 1, column 3
+     - HOLA
+     
    * - Row 2, column 1
      - Row 2, column 2
-     - Row 2, column 3
+     
 
 
 
