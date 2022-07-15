@@ -1,6 +1,5 @@
-CP2K Excited states calculation via TDDFPT
+CP2K excited states calculation via TDDFPT
 ======================================================
-
 
 In this section, there is an input template to perform time-dependent density function perturbation theory as implemented in CP2K. 
 Issue to be considered:
@@ -26,11 +25,11 @@ Issue to be considered:
 Validation of the results
 ==========================
 
-A complementary calculation has been carried out using **ORCA 4.2.1** employing the same Exchange-Correlation potential (B3LYP). There are substantial
+A complementary calculation has been carried out using **ORCA 4.2.1** employing the same exchange-Correlation potential (B3LYP). There are substantial
 differences between the jobs, since **ORCA** is an all electron code, whereas **CP2K** uses a pseudo-potential (GTH in this case) approach. The following
 table reports the results between the two programs:
 
-.. list-table:: Title
+.. list-table:: Orca vs CP2k
    :widths: 25 25 50
    :header-rows: 1
 
