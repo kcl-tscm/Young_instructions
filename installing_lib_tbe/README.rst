@@ -48,7 +48,7 @@ and compare with the previous given list.
 Steps to follow:
 ------------------
 
-Within the folder of the downloaded library, one needs to used the following commands **in this order:**
+Within the folder of the downloaded library (where the aclocal.m4 file), one needs to used the following commands **in this order:**
 
 .. code-block:: bash
   
@@ -58,5 +58,6 @@ Within the folder of the downloaded library, one needs to used the following com
   automake --force-missing --add-missing
   autoconf 
 
-Once this is done the **./configure** command can be used in conjuction with make to install the library. 
+Once this is done the **./configure** command can be used in conjuction with make to install the library. This will be presented inside every folder 
+with the name of the compiled library.
 
