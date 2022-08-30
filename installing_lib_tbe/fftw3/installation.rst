@@ -1,7 +1,7 @@
 Instructions:
 ===================
 
-Steps to install fftw3_ in Young.
+Steps to install fftw_ in Young.
 
 1. To install the fftw_ library, first one needs to dowload it from:
 
@@ -30,7 +30,7 @@ compiled files and the folders **bin, include, share and libs** will be placed. 
 
 
 
-__fftw: http://www.fftw.org/download.html
+.. _fftw: https://www.python.org/ http://www.fftw.org/download.html
 
 
 
