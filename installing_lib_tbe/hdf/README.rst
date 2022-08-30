@@ -21,7 +21,7 @@ This can be done via this command:
 
 .. code-block:: bash
 
-   CC=mpicc FC=mpif90 ./configure --prefix=$INSTALL_PREFIX --enable-parallel --enable-shared --enable-fortran  --enable-fortran2003
+   CC=mpicc FC=mpif90 ./configure --prefix=$INSTALL_PREFIX --enable-parallel --enable-shared --enable-fortran  
 
 
 
