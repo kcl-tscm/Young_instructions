@@ -27,11 +27,13 @@ Steps to follow:
 
 Within the folder of the downloaded library, one needs to used the following commands **in this order:**
 
-libtoolize --force
-aclocal
-autoheader 
-automake --force-missing --add-missing
-autoconf 
+.. code-block: bash
+  
+  libtoolize --force
+  aclocal
+  autoheader 
+  automake --force-missing --add-missing
+  autoconf 
 
 Once this is done the **./configure** command can be used in conjuction with make to install the library. 
 
