@@ -27,7 +27,7 @@ Steps to follow:
 
 Within the folder of the downloaded library, one needs to used the following commands **in this order:**
 
-.. code-block: bash
+.. code-block:: bash
   
   libtoolize --force
   aclocal
