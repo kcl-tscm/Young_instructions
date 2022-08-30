@@ -30,7 +30,7 @@ compiled files and the folders **bin, include, share and libs** will be placed. 
 
 
 
-.. _fftw: https://www.python.org/ http://www.fftw.org/download.html
+.. _fftw: http://www.fftw.org/download.html
 
 
 
