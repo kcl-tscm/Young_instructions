@@ -9,7 +9,7 @@ Modules required:
 ------------------
 Before starting, please deactivate all modules which are automaticall loaded, by typing:
 
-.. code-block: bash
+.. code_block: bash
 
    [~] module purge
 
@@ -26,7 +26,7 @@ Subsequently, the following modules to install and submit jobs using **xtb**:
 
 this is done by using the command:
 
-.. code-block:  bash
+.. code_block:  bash
 
    [~] module load MODULE
    
