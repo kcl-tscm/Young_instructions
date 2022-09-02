@@ -31,3 +31,28 @@ this is done by using the command:
    [~] module load MODULE
    
 where MODULE is replaced by the aforementined list.
+
+Building XTB-6.5.1 within a virtual environment:
+-----------------------------------------------------
+
+The main advantages to build **xtb** within a virtual environment is that we can use the **bin/** folder created by the virtual environment to store the
+**xtb** executable. All the previous modules must be loaded at this point. The following steps creates a virtual environment within a folder called 
+**work**:
+
+.. code-block:: bash
+
+   [~] mkdir work
+   [~] cd work
+   [~] python -m venv base
+   [~] source base/bin/activate
+   [~] export CC=gcc
+   [~] export FC=gfortran
+   [~] git clone https://github.com/grimme-lab/xtb.git
+   [~] cd xtb
+   [~] mkdir build
+   [~] cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/work/base/bin
+   [~] make -j4
+   [~] make test
+   
+If everything went fine, the **xtb** executable can be found in **/work/base/**.   
+
