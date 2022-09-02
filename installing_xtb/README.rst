@@ -50,9 +50,17 @@ The main advantages to build **xtb** within a virtual environment is that we can
    [~] git clone https://github.com/grimme-lab/xtb.git
    [~] cd xtb
    [~] mkdir build
-   [~] cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/work/base/bin
+   [~] cmake .. -DCMAKE_BUILD_TYPE=Release
    [~] make -j4
    [~] make test
+   [~] chmod +x xtb
+   [~] cp -r xtb ../base/bin/
    
-If everything went fine, the **xtb** executable can be found in **/work/base/**.   
+If everything went fine, the **make test** command will test the **xtb** executable. All tests must said **passed**. The executable can be found in **/work/base/** and can be used as:
+
+.. code-block:: bash
+
+  [~] ../base/xtb mol.xyz --opt 
+  
+to run a geometrical optimization, for instance. To submit jobs using the queue system, please send me an email, and I will explain to you the procedure. 
 
