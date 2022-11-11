@@ -1,8 +1,41 @@
-How to compile it:
+Functions in Lapack:
 ====================
 
-This is the command to compile the code. 
+This is the command to compile the code: 
 
 .. code-block:: bash
 
    [~] gfortran -L/usr/lib/ -o example1 inverse.f90 -llapack
+
+
+Inside the code you can play with n (size of the matrix). This is an example of a result, you will not get the same since 
+this is a random matrix:
+
+.. code-block:: bash
+
+    LU matrix:
+    0.731777E+00   0.600594E+00   0.319432E+00   0.975059E+00   0.609793E+00
+    0.995637E+00   0.419232E+00   0.981643E+00   0.448433E+00   0.568183E+00
+    0.278715E+00   0.252647E+00   0.219843E+00   0.134266E+00   0.462062E+00
+    0.387713E+00   0.513067E+00   0.454715E+00   0.317646E+00   0.696931E-01
+    0.879387E+00   0.621345E+00   0.657909E-01   0.770353E+00   0.133723E-01
+ 
+ LU decomposition successful 
+ 
+ LU matrix:
+  0.995637E+00   0.419232E+00   0.981643E+00   0.448433E+00   0.568183E+00
+  0.389412E+00   0.349813E+00   0.724518E-01   0.143021E+00  -0.151564E+00
+  0.883240E+00   0.717703E+00  -0.853235E+00   0.271632E+00  -0.379692E+00
+  0.734984E+00   0.836061E+00   0.542212E+00   0.378611E+00   0.524778E+00
+  0.279936E+00   0.386745E+00   0.972474E-01  -0.192797E+00   0.499723E+00
+ 
+ Inverse successful 
+ 
+ Inverse matrix:
+ -0.132507E+01   0.885244E+00   0.858610E+00  -0.163962E+01   0.168830E+01
+ -0.797411E+00  -0.136158E+01   0.236835E+01   0.229017E+01   0.444791E+00
+  0.498924E+00   0.791920E+00  -0.177351E+01   0.118029E+01  -0.127006E+01
+  0.210648E+01   0.230426E-01  -0.277365E+01  -0.623048E-01  -0.872427E+00
+  0.385807E+00  -0.172971E+00   0.200111E+01  -0.806675E+00  -0.403792E+00
+ 
+ done 
