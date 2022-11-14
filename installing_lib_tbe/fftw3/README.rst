@@ -18,7 +18,7 @@ commands:
 
 .. code-block:: bash
 
-  ./configure --prefix=$HOME/PATH_TO_FOLDER --enable-mpi --enable-shared=yes --nodocs 
+  ./configure --prefix=$HOME/PATH_TO_FOLDER --enable-mpi --enable-shared=yes --disable-doc
    make
    make install
 
