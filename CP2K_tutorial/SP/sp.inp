@@ -15,9 +15,9 @@
     BASIS_SET_FILE_NAME /shared/ucl/apps/cp2k/7.1/gnu-4.9.2/cp2k-7.1/data/BASIS_ADMM
     BASIS_SET_FILE_NAME /shared/ucl/apps/cp2k/7.1/gnu-4.9.2/cp2k-7.1/data/BASIS_ADMM_MOLOPT
     BASIS_SET_FILE_NAME /shared/ucl/apps/cp2k/7.1/gnu-4.9.2/cp2k-7.1/data/EMSL_BASIS_SETS
-    WFN_RESTART_FILE_NAME ./last.wfn
-
-    CHARGE 0
+    LSD
+    MULTIPLICITY 2
+    CHARGE -1
     &MGRID
       CUTOFF 500
       REL_CUTOFF 50
