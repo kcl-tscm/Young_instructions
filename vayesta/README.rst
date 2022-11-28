@@ -30,15 +30,37 @@ How to install Vayesta with mpi support:
    [~] git clone https://github.com/pyscf/pyscf.git
    [~] git clone https://github.com/BoothGroup/Vayesta.git
 
+After this, two folders will be shown, **pyscf** and **Vayesta**.
 
-A set of selected modules need to be used to perform the installation:
+3. A set of selected modules are needed to perform the installation:
+
+.. code-block:: bash
+
+   [~] module purge
+   [~] module load beta-modules
+   [~] module load gcc-libs/10.2.0
+   [~] module load python/3.9.6
+   [~] module load emacs
+   [~] module load openblas/0.3.13-openmp/gnu-10.2.0
+   [~] module load compilers/gnu/10.2.0
+   [~] module load mpi/openmpi/4.0.5/gnu-10.2.0
+   [~] module load cmake/3.21.1
+
+.. note::
+
+   There are couple of important things to notice from these instructions. First the command **module purge** unload ALL modules including any text      
+   editor such as *emacs* or *vim*. If you want to load vim instead of emacs, you need to type *module load vim*. 
+   
+   The module **python/3.9.6** is the only python installation that does not have any **openblas/numpy serial** linked module. This is important 
+   since we want to install **numpy** with **openblas**. 
+   
+   
+
+   
+   
+   
+   
+   
+   
 
 
-module load beta-modules
-module load gcc-libs/10.2.0
-module load python/3.9.6
-module load emacs
-module load openblas/0.3.13-openmp/gnu-10.2.0
-module load compilers/gnu/10.2.0
-module load mpi/openmpi/4.0.5/gnu-10.2.0
-module load cmake/3.21.1
