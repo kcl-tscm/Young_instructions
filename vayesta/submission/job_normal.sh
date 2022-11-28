@@ -21,8 +21,8 @@ source $HOME/work/pol/bin/activate
 export PATH=$HOME/work/pol/bin:$PATH
 export PYTHONPATH=$HOME/work/pol/lib/python3.9/site-packages:$PYTHONPATH
 
-export PYTHONPATH=$PYTHONPATH:$HOME/vayesta_installation/pyscf
-export PYTHONPATH=$PYTHONPATH:$HOME/vayesta_installation/Vayesta
+export PYTHONPATH=$PYTHONPATH:$HOME/work/pyscf
+export PYTHONPATH=$PYTHONPATH:$HOME/work/Vayesta
 
 export OMP_NUM_THREADS=1
 gerun python 90-mpi.py > output.out
