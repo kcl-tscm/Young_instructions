@@ -9,6 +9,8 @@ Files:
 
 1. **Set of modules:** A condensed set of instructions to install Vayesta_ in Young as text file.
 
+2. **Young.rst* :* Detailed set of instructions to use Vayesta_ in Young for mpi-parallel calculations.
+
 How to install Vayesta with mpi support:
 ==========================================
 
