@@ -113,6 +113,7 @@ since PYSCF_ builds very heavy libraries such as **libxc**.
    mkdir build
    cd build
    cmake ..
+   make
 
 10. Declare the installation path of Vayesta_
 
