@@ -129,10 +129,7 @@ since PYSCF_ builds very heavy libraries such as **libxc**.
 After these steps have been performed, Vayesta_ and PySCF_ have been installed inside the **bin** folder in the virtual environment created 
 within the **$HOME/work** folder.
 
-How to use Vayesta in Young:
-==============================
 
-Vayesta_ can be used in Young via the queue (qsub) system. 
 
 
 
