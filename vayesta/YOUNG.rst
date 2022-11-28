@@ -81,4 +81,3 @@ This is the most important part of the submission file. You need to be aware tha
 gerun is a wrapper of the command **mpirun -np**.  
 
 .. _Vayesta: https://github.com/BoothGroup/Vayesta
-
