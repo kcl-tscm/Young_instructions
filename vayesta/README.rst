@@ -46,13 +46,15 @@ After this, two folders will be shown, **pyscf** and **Vayesta**.
    [~] module load mpi/openmpi/4.0.5/gnu-10.2.0
    [~] module load cmake/3.21.1
 
-.. warning::
 
-   There are couple of important things to notice from these instructions. First the command **module purge** unload ALL modules including any text      
-   editor such as *emacs*. If you use **vim**, this is the default text editor and therefore is not unloaded. 
+Note:
+=======
+
+There are couple of important things to notice from these instructions. First the command **module purge** unload ALL modules including any text      
+editor such as *emacs*. If you use **vim**, this is the default text editor and therefore is not unloaded. 
    
-   The module **python/3.9.6** is the only python installation that does not have any **openblas/numpy serial** linked module. This is important 
-   since we want to install **numpy** with **openblas**. 
+The module **python/3.9.6** is the only python installation that does not have any **openblas/numpy serial** linked module. This is important 
+since we want to install **numpy** with **openblas**. 
    
    
    
