@@ -9,7 +9,7 @@ Files:
 
 1. **Set of modules:** A condensed set of instructions to install Vayesta_ in Young as text file.
 
-2. **Young.rst* :* Detailed set of instructions to use Vayesta_ in Young for mpi-parallel calculations.
+2. **Young.rst* :* Detailed set of instructions to use Vayesta_ in Young_ for mpi-parallel calculations.
 
 How to install Vayesta with mpi support:
 ==========================================
@@ -125,19 +125,13 @@ After these steps have been performed, Vayesta_ and PySCF_ have been installed i
 within the **$HOME/work** folder.
 
 
-
-
-
 .. _PySCF: https://pyscf.org/
 .. _Vayesta: https://github.com/BoothGroup/Vayesta
+.. _Young: https://github.com/kcl-tscm/Young_instructions/blob/main/vayesta/YOUNG.rst
 
 .. role:: python(code)
    :language: python
 
 .. role:: console(code)
    :language: console   
-   
-   
-   
-
-
+      
