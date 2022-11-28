@@ -49,10 +49,14 @@ After this, two folders will be shown, **pyscf** and **Vayesta**.
 .. note::
 
    There are couple of important things to notice from these instructions. First the command **module purge** unload ALL modules including any text      
-   editor such as *emacs* or *vim*. If you want to load vim instead of emacs, you need to type *module load vim*. 
+   editor such as *emacs*. If you use **vim**, this is the default text editor and therefore is not unloaded. 
    
    The module **python/3.9.6** is the only python installation that does not have any **openblas/numpy serial** linked module. This is important 
    since we want to install **numpy** with **openblas**. 
+   
+   
+   
+   
    
    
 
