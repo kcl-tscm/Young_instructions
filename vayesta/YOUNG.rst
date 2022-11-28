@@ -79,3 +79,6 @@ This is the most important part of the submission file. You need to be aware tha
 **locally**. These three commands are enabling the local environment to be found by the python interpreter once it is launched by gerun. 
 
 gerun is a wrapper of the command **mpirun -np**.  
+
+.. _Vayesta: https://github.com/BoothGroup/Vayesta
+
