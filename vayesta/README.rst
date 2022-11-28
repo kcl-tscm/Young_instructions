@@ -16,6 +16,29 @@ Files:
 4. **job_z_nodes.sh:** An example of a submission file employing very high-memory RAM nodes (60GB and 36 cores).
 
 
-How To install Vayesta with mpi support:
+How to install Vayesta with mpi support:
 ==========================================
 
+
+1. Create a folder in your **$HOME**, it can be called work for instance.
+
+2. After creating the previous folder, the two programs need to be download using git. This is done in the following way:
+
+.. code-block:: bash
+   
+   [~] cd work
+   [~] git clone https://github.com/pyscf/pyscf.git
+   [~] git clone https://github.com/BoothGroup/Vayesta.git
+
+
+A set of selected modules need to be used to perform the installation:
+
+
+module load beta-modules
+module load gcc-libs/10.2.0
+module load python/3.9.6
+module load emacs
+module load openblas/0.3.13-openmp/gnu-10.2.0
+module load compilers/gnu/10.2.0
+module load mpi/openmpi/4.0.5/gnu-10.2.0
+module load cmake/3.21.1
