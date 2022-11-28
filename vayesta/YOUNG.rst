@@ -10,7 +10,7 @@ Vayesta_ can be used in Young via the queue (qsub) system. In the folder **submi
 
 3. **job_y_node.sh :** An example of a submission file employing high-memory RAM nodes (20GB and 40 cores).
 
-4. **job_z_nodes.sh:** An example of a submission file employing very high-memory RAM nodes (60GB and 36 cores).
+4. **job_z_node.sh:** An example of a submission file employing very high-memory RAM nodes (60GB and 36 cores).
 
 which display different possibilities of calculations using Vayesta_ in the Young submission file system with **mpi** parallelism.
 
