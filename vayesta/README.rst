@@ -57,14 +57,93 @@ The module **python/3.9.6** is the only python installation that does not have a
 since we want to install **numpy** with **openblas**. 
    
    
-   
-   
-   
-   
+4. A virtual environment is needed for installing the corresponding libraries for PySCF_ and Vayesta_. This is done in the following way:
 
+.. code-block:: bash
+ 
+   [~] python3 -m venv pol
+   [~] source pol/bin/activate
+
+The name **pol** is optional and can be changed. 
    
-   
-   
+5. Change the **path** where the Python path where libraries will be searched. This is presented in the following code snippet. 
+
+.. code-block:: bash
+ 
+   [~] export PATH=$HOME/work/pol/bin:$PATH
+   [~] export PYTHONPATH=$HOME/work/pol/lib/python3.9/site-packages:$PYTHONPATH
+
+Note:
+========
+
+This step is a crucial step to ensure that libraries are installed locally and can be used for further calculations.
+
+6. Installing **mpi4py** with the provided python version. This done as indicated below:
+
+.. code-block:: bash
+
+   [~] python3 -m pip install --upgrade pip
+   [~] env MPICC=mpicc python -m pip install --force mpi4py
+
+7. Installing PySCF_ as indicated in the following commands:
+
+.. code-block:: bash
+
+   [~] cd pyscf/
+   [~] cd pyscf/lib/
+   [~] mkdir build
+   [~] cd build
+   [~] cmake ..
+   [~] make -j8
+
+Note:
+=======
+
+In the last command **make -j8**, the option **-j** indicates the number of cores used for the installation. I suggest to use 8 cores
+since PYSCF_ builds very heavy libraries such as **libxc**. 
+
+
+8. Declare the installation path of PySCF_ 
+
+.. code-block:: bash
+
+   [~] PYTHONPATH=$PYTHONPATH:$HOME/work/pyscf
+
+9. Installing Vayesta_ :
+
+.. code-block:: bash
+
+   [~] cd Vayesta
+   [~] cd vayesta/libs
+   [~] mkdir build
+   [~] cd build
+   [~] cmake ..
+
+10. Declare the installation path of Vayesta_
+
+.. code-block:: bash
+
+   [~] PYTHONPATH=$PYTHONPATH:$HOME/work/Vayesta/
+
+
+After these steps have been performed, Vayesta_ and PySCF_ have been installed inside the **bin** folder in the virtual environment created 
+within the **$HOME/work** folder.
+
+How to use Vayesta in Young:
+==============================
+
+Vayesta_ can be used in Young via the queue (qsub) system. 
+
+
+
+.. _PySCF: https://pyscf.org/
+.. _Vayesta: https://github.com/BoothGroup/Vayesta
+
+.. role:: python(code)
+   :language: python
+
+.. role:: console(code)
+   :language: console   
    
    
    
