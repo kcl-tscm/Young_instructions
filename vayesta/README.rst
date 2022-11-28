@@ -21,9 +21,9 @@ How to install Vayesta with mpi support:
 
 .. code-block:: bash
    
-   [~] cd work
-   [~] git clone https://github.com/pyscf/pyscf.git
-   [~] git clone https://github.com/BoothGroup/Vayesta.git
+   cd work
+   git clone https://github.com/pyscf/pyscf.git
+   git clone https://github.com/BoothGroup/Vayesta.git
 
 After this, two folders will be shown, **pyscf** and **Vayesta**.
 
@@ -31,15 +31,15 @@ After this, two folders will be shown, **pyscf** and **Vayesta**.
 
 .. code-block:: bash
 
-   [~] module purge
-   [~] module load beta-modules
-   [~] module load gcc-libs/10.2.0
-   [~] module load python/3.9.6
-   [~] module load emacs
-   [~] module load openblas/0.3.13-openmp/gnu-10.2.0
-   [~] module load compilers/gnu/10.2.0
-   [~] module load mpi/openmpi/4.0.5/gnu-10.2.0
-   [~] module load cmake/3.21.1
+   module purge
+   module load beta-modules
+   module load gcc-libs/10.2.0
+   module load python/3.9.6
+   module load emacs
+   module load openblas/0.3.13-openmp/gnu-10.2.0
+   module load compilers/gnu/10.2.0
+   module load mpi/openmpi/4.0.5/gnu-10.2.0
+   module load cmake/3.21.1
 
 
 Note:
@@ -56,8 +56,8 @@ since we want to install **numpy** with **openblas**.
 
 .. code-block:: bash
  
-   [~] python3 -m venv pol
-   [~] source pol/bin/activate
+   python3 -m venv pol
+   source pol/bin/activate
 
 The name **pol** is optional and can be changed. 
    
@@ -65,8 +65,8 @@ The name **pol** is optional and can be changed.
 
 .. code-block:: bash
  
-   [~] export PATH=$HOME/work/pol/bin:$PATH
-   [~] export PYTHONPATH=$HOME/work/pol/lib/python3.9/site-packages:$PYTHONPATH
+   export PATH=$HOME/work/pol/bin:$PATH
+   export PYTHONPATH=$HOME/work/pol/lib/python3.9/site-packages:$PYTHONPATH
 
 Note:
 ========
@@ -77,19 +77,19 @@ This step is a crucial step to ensure that libraries are installed locally and c
 
 .. code-block:: bash
 
-   [~] python3 -m pip install --upgrade pip
-   [~] env MPICC=mpicc python -m pip install --force mpi4py
+   python3 -m pip install --upgrade pip
+   env MPICC=mpicc python -m pip install --force mpi4py
 
 7. Installing PySCF_ as indicated in the following commands:
 
 .. code-block:: bash
 
-   [~] cd pyscf/
-   [~] cd pyscf/lib/
-   [~] mkdir build
-   [~] cd build
-   [~] cmake ..
-   [~] make -j8
+   cd pyscf/
+   cd pyscf/lib/
+   mkdir build
+   cd build
+   cmake ..
+   make -j8
 
 Note:
 =======
@@ -102,23 +102,23 @@ since PYSCF_ builds very heavy libraries such as **libxc**.
 
 .. code-block:: bash
 
-   [~] PYTHONPATH=$PYTHONPATH:$HOME/work/pyscf
+   PYTHONPATH=$PYTHONPATH:$HOME/work/pyscf
 
 9. Installing Vayesta_ :
 
 .. code-block:: bash
 
-   [~] cd Vayesta
-   [~] cd vayesta/libs
-   [~] mkdir build
-   [~] cd build
-   [~] cmake ..
+   cd Vayesta
+   cd vayesta/libs
+   mkdir build
+   cd build
+   cmake ..
 
 10. Declare the installation path of Vayesta_
 
 .. code-block:: bash
 
-   [~] PYTHONPATH=$PYTHONPATH:$HOME/work/Vayesta/
+   PYTHONPATH=$PYTHONPATH:$HOME/work/Vayesta/
 
 
 After these steps have been performed, Vayesta_ and PySCF_ have been installed inside the **bin** folder in the virtual environment created 
