@@ -11,6 +11,9 @@ Files:
 
 2. **Young.rst :** Detailed set of instructions to use Vayesta_ in Young_ for mpi-parallel calculations.
 
+3. **HDF_mpi_compilation.rst :** Set of instructions to install h5py_ with openmpi support. This is **recommended** to be done before 
+    installing **PySCF** and **Vayesta** as part of the Python virtual environment. 
+
 How to install Vayesta with mpi support:
 ==========================================
 
@@ -129,6 +132,7 @@ within the **$HOME/work** folder.
 .. _PySCF: https://pyscf.org/
 .. _Vayesta: https://github.com/BoothGroup/Vayesta
 .. _Young: https://github.com/kcl-tscm/Young_instructions/blob/main/vayesta/YOUNG.rst
+.. _h5py: https://github.com/kcl-tscm/Young_instructions/blob/main/vayesta/HDF_mpi_compilation.rst
 
 .. role:: python(code)
    :language: python
