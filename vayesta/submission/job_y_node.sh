@@ -17,6 +17,9 @@ module load compilers/gnu/10.2.0
 module load mpi/openmpi/4.0.5/gnu-10.2.0
 module load gerun
 
+export HDF5_INCLUDE_PATH=$HOME/work/ext_libs/include
+export HDF5_LIBRARY_PATH=$HOME/work/ext_libs/lib
+
 source $HOME/work/pol/bin/activate
 
 export PATH=$HOME/work/pol/bin:$PATH
@@ -25,5 +28,5 @@ export PYTHONPATH=$HOME/work/pol/lib/python3.9/site-packages:$PYTHONPATH
 export PYTHONPATH=$PYTHONPATH:$HOME/work/pyscf
 export PYTHONPATH=$PYTHONPATH:$HOME/work/Vayesta
 
-export OMP_NUM_THREADS=1
+OMP_NUM_THREADS=$(ppn)
 gerun python 90-mpi.py > output.out
