@@ -62,6 +62,6 @@ program complex_matrix_inverse
          write(*,'(a,2(e12.6,x))')' error= ',error
       end do
 
-      deallocate(A,A1,IPIV,WORK,stat=error)
+      deallocate(A,A1,IPIV,WORK,stat=err)
       
 end program complex_matrix_inverse
