@@ -1,8 +1,8 @@
 Functions in Lapack:
 ====================
 
-Real Matrices
-=============
+Real Matrices:
+================
 
 This is the command to compile the code: 
 
@@ -43,8 +43,8 @@ this is a random matrix:
  
  done 
 
-Complex 
-========================================
+Complex Matrices:
+==================
 
 To compile the code, you need to use this command:
 
