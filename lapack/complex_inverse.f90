@@ -44,12 +44,6 @@ program complex_matrix_inverse
          stop
       end if
       
-      
-
-!     write(*,*) INFO,'  dim = ',N6
-!     allocate(WORK(N6))
-!     call zgetri(N,A,N,IPIV,WORK,N6,INFO)
-
 !........ check eigenvectors & eigenvalues
 
       write(*,'(/a,i3)') '....... CHECKING MATRIX via A1*A-E=0 .......'
@@ -65,9 +59,9 @@ program complex_matrix_inverse
             err=err+c
             write(*,*) i,j,c
          end do
-         write(*,'(a,2(e12.6,x))')' error= ',err
+         write(*,'(a,2(e12.6,x))')' error= ',error
       end do
 
-      deallocate(A,A1,IPIV,WORK,stat=err)
+      deallocate(A,A1,IPIV,WORK,stat=error)
       
 end program complex_matrix_inverse
