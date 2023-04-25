@@ -56,7 +56,7 @@ program complex_matrix_inverse
                c=c+A1(i,k)*A(k,j)
             end do
             if(i.eq.j) c=c-1.0d0
-            err=err+c
+            error=error+c
             write(*,*) i,j,c
          end do
          write(*,'(a,2(e12.6,x))')' error= ',error
