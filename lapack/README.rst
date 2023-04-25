@@ -8,7 +8,7 @@ This is the command to compile the code:
 
 .. code-block:: bash
 
-   [~] gfortran -L/usr/lib/ -o example1 inverse.f90 -llapack
+   [~] gfortran -L/usr/lib/ -o example1 complex_inverse.f90 -llapack
 
 
 Inside the code you can play with n (size of the matrix). This is an example of a result, you will not get the same since 
