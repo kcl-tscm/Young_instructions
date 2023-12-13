@@ -111,7 +111,8 @@ commands:
    python runtests.py -j8
 
 
-This will execute and run the whole test_suite (around 6 different sets of tests). Finally, the library can be fully installed by typping this command:
+This will execute and run the whole test_suite (around 6 different sets of tests). It can take a while (around 2 hours). Finally, the library can be fully installed 
+by typping this command:
 
 .. code-block:: bash
 
