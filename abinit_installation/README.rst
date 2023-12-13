@@ -10,7 +10,7 @@ First of all, we need to unload all modules which are uploaded when we initiate 
    module purge
    module load emacs
 
-The command `` module load emacs `` is to have a text editor.
+Abinit requires a text editor (in this case is emacs).
 
 *Preparing the environement for installing the code :*
 =======================================================
@@ -24,7 +24,7 @@ To correctly install abinit, we neeed to download the code. This is done by typp
     wget https://www.abinit.org/sites/default/files/packages/abinit-9.10.3.tar.gz
     tar -xzvf abinit-9.10.3.tar.gz
 
-once this is done, we have a folder called `` abinit-9.10.3 ``. We need to access this folder by typping `` cd abinit-9.10.3 ``.
+once this is done, we have a folder called *abinit-9.10.3*. We need to access this folder by typping **cd abinit-9.10.3**.
 
 Loading the required modules
 =====================================
