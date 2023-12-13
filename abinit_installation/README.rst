@@ -88,7 +88,7 @@ Based on this information, we need to proceed in the following manner:
    ./configure --prefix="$PATH_TO_DIR_WHERE_TO_INSTALL_ABINIT"  --with-libxc="$PATH_GIVEN_IN_THE_FALLBACKS" --with-hdf5="$PATH_GIVEN_IN_THE_FALLBACKS" --with-netcdf="$PATH_GIVEN_IN_THE_FALLBACKS" --with-netcdf_fortran="$PATH_GIVEN_IN_THE_FALLBACKS" FC=mpif90 CC=mpicc CXX=mpicxx 
    
 This command should contruct a valid **MakeFile** enabling the compilation of abinit. It is important to notice that there are differences with the path reported by the fallback script (**with_libxc**) and the one declared for the **configure** command (**--with-libxc=**). Also
-it is important to notice that for the path in the configure command, one needs to use *"*. 
+it is important to notice that for the path in the configure command, one needs to declare it in between quotation marks **"PATH_HERE"**. 
 
 finally, once this is finished. One can compile the code by typping:
 
