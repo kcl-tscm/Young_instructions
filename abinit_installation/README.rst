@@ -96,13 +96,30 @@ finally, once this is finished. One can compile the code by typping:
 
    make -j8
 
-and then one can install it by typping:
+and then one can test the installation using the following command:
 
 .. code-block:: bash
 
-   make -j8 install
+   make test_fast
 
-This can take up to 40 minutes. 
+This is recommended to test that all executables have been correctly built. If this passes, we can perform the most extensive testing of the executable by typping the following 
+commands:
+
+.. code-block:: bash
+
+   cd tests
+   python runtests.py -j8
+
+
+This will execute and run the whole test_suite (around 6 different sets of tests). Finally, the library can be fully installed by typping this command:
+
+.. code-block:: bash
+
+   make install -j8
+
+And this will build inside the directory declared in the **prefix** flag the executables and stored in folders named **bin**, **lib**, and **shared**.
+
+
 
 
 
