@@ -5,8 +5,30 @@ These are the instructions to install abinit (latest version) in Young.
 
 First of all, we need to unload all modules which are uploaded when we initiate our session. This is done by the command:
 
-.. code-block:: rst
+.. code-block:: bash
 
    module purge
-   module emacs
+   module load emacs
+
+The command `` module load emacs `` is to have a text editor.
+
+*Preparing the environement for installing the code :*
+=======================================================
+
+To correctly install abinit, we neeed to download the code. This is done by typping the following commands:
+
+.. code-block:: bash
+
+    mkdir abinit_latest
+    cd abinit_latest
+    wget https://www.abinit.org/sites/default/files/packages/abinit-9.10.3.tar.gz
+    tar -xzvf abinit-9.10.3.tar.gz
+
+once this is done, we have a folder called `` abinit-9.10.3 ``. We need to access this folder by typping `` cd abinit-9.10.3 ``.
+
+Loading the required modules
+=====================================
+
+
+
 
