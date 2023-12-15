@@ -34,13 +34,12 @@ The following list of modules need to be loaded for installing abinit:
 .. code-block:: bash
 
    module load beta-modules
-   module load cmake
    module load gcc-libs/10.20.0
    module load compilers/gnu/10.2.0
    module load openblas/0.3.13-openmp/gnu-10.2.0
    module load mpi/openmpi/4.0.5/gnu-10.2.0
    module load fftw/3.3.9/gnu-10.2.0 
-   module load python3/3.7
+   module load cmake
    
 
 *Compiling abinit:*
@@ -56,7 +55,7 @@ The **failed attempt** can be performed in this way:
 .. code-block:: bash
 
    cd abinit-9.10.3
-   ./configure --prefix="$PATH_TO_DIR_WHERE_TO_INSTALL_ABINIT" 
+   ./configure --prefix="$PATH_TO_DIR_WHERE_TO_INSTALL_ABINIT" FC=mpif90 CC=mpicc CXX=mpicxx 
 
 This will start to check the paths and libraries. The flag *$PATH_TO_DIR_WHERE_TO_INSTALL_ABINIT* is defined by the user, namely you need to define where to store the executables of Abinit. You can use the first folder abinit_folder ($HOME/abinit_folder).
 At some point is going to break due to not gfortran command found. Once this happens, we need  to type the following commands:
