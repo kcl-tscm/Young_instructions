@@ -29,4 +29,5 @@ If you want to expand the **15.0 15.0 15.0** you can change the value. Only thin
 
 ## Submission file:
 
+It is ready to be submitted with 40 cores, if it is not running quite instantly, please change it to 80 cores. 
 
