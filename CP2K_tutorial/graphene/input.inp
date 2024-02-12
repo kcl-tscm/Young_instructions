@@ -24,6 +24,9 @@
   &DFT
     BASIS_SET_FILE_NAME /shared/ucl/apps/cp2k/7.1/gnu-4.9.2/cp2k-7.1/data/BASIS_MOLOPT
     POTENTIAL_FILE_NAME /shared/ucl/apps/cp2k/7.1/gnu-4.9.2/cp2k-7.1/data/GTH_POTENTIALS 
+    LSD
+    MULTIPLICITY 1
+    CHARGE 0
     &QS
       EPS_DEFAULT 1.0E-12
     &END QS
@@ -48,6 +51,14 @@
     &XC
       &XC_FUNCTIONAL PBE
       &END XC_FUNCTIONAL
+      &vdW_POTENTIAL
+        DISPERSION_FUNCTIONAL PAIR_POTENTIAL
+           &PAIR_POTENTIAL
+             TYPE DFTD3
+             PARAMETER_FILE_NAME  /shared/ucl/apps/cp2k/7.1/gnu-4.9.2/cp2k-7.1/data/dftd3.dat
+             REFERENCE_FUNCTIONAL PBE
+           &END PAIR_POTENTIAL
+      &END vdW_POTENTIAL
     &END XC
   &END DFT
 &END FORCE_EVAL
