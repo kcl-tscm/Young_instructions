@@ -33,7 +33,7 @@
     &MGRID
       CUTOFF 850
       NGRIDS 5
-      REL_CUTOFF 60
+      REL_CUTOFF 65
     &END MGRID
     &SCF
       SCF_GUESS ATOMIC
@@ -44,8 +44,7 @@
       &END DIAGONALIZATION
       &MIXING T
         ALPHA 0.5
-        METHOD PULAY_MIXING
-        NPULAY 5
+        METHOD DIRECT_P_MIXING
       &END MIXING
     &END SCF
     &XC
