@@ -24,16 +24,13 @@
   &DFT
     BASIS_SET_FILE_NAME /shared/ucl/apps/cp2k/7.1/gnu-4.9.2/cp2k-7.1/data/BASIS_MOLOPT
     POTENTIAL_FILE_NAME /shared/ucl/apps/cp2k/7.1/gnu-4.9.2/cp2k-7.1/data/GTH_POTENTIALS 
-    LSD
-    MULTIPLICITY 1
-    CHARGE 0
     &QS
       EPS_DEFAULT 1.0E-12
     &END QS
     &MGRID
-      CUTOFF 850
+      CUTOFF 500
       NGRIDS 5
-      REL_CUTOFF 65
+      REL_CUTOFF 60
     &END MGRID
     &SCF
       SCF_GUESS ATOMIC
@@ -43,8 +40,7 @@
         ALGORITHM STANDARD
       &END DIAGONALIZATION
       &MIXING T
-        ALPHA 0.5
-        METHOD DIRECT_P_MIXING
+        METHOD BROYDEN_MIXING
       &END MIXING
     &END SCF
     &XC
@@ -64,10 +60,10 @@
 &MOTION
   &GEO_OPT
     TYPE MINIMIZATION
-    MAX_DR    1.0E-04
-    MAX_FORCE 1.0E-04
-    RMS_DR    1.0E-04
-    RMS_FORCE 1.0E-04
+    MAX_DR    1.0E-03
+    MAX_FORCE 1.0E-03
+    RMS_DR    1.0E-03
+    RMS_FORCE 1.0E-03
     MAX_ITER 200
     OPTIMIZER CG
     &CG
