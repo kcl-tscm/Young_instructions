@@ -29,7 +29,7 @@ Many orca input files are added for performing different kind of calculations (s
 Main blocks are defined for fine tuned parameters in experienced users.
 
 1. orca_sp.inp
-2. orca_
+2. orca_geo_opt.inp
 3. orca_tddft.inp
 4. orca_
 5. orca_hess.inp
