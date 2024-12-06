@@ -1,0 +1,30 @@
+#
+!UHF def2-tzvpp Grid5 FinalGrid6 VeryTightSCF Nofrozencore
+
+%scf
+        TolE 1e-10
+        MaxIter 1500
+        DIISMaxEq 10
+        STABPerform true
+end
+%PAL
+        NPROCS 20
+END
+%maxcore 10000
+* xyzfile -1 2 mol.xyz
+
+$NEW_JOB
+
+! DLPNO-CCSD(T) def2-tzvpp Grid5 FinalGrid6 VeryTightSCF Nofrozencore
+%moinp "62-53-3.gbw"
+%scf
+        TolE 1e-10
+        MaxIter 1500
+        DIISMaxEq 10
+        STABPerform true
+end
+%PAL
+        NPROCS 20
+END
+%maxcore 10000
+* xyzfile -1 2 mol.xyz
