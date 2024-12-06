@@ -17,3 +17,9 @@ pip install openbabel-wheel
 ``` bash
 pip install rdkit
 ```
+and then you can use the code as python script as:
+
+``` python
+
+python conformers_ff.py
+```
