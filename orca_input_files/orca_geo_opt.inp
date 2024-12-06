@@ -1,0 +1,10 @@
+#
+!B3LYP def2-TZVP RIJCOSX def2/J Opt
+%maxcore 4500
+%SCF
+   MAXITER 1500
+END
+%pal
+ nprocs 120
+end
+* xyzfile 0 1 mol.xyz
