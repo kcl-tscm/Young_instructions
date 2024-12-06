@@ -4,4 +4,4 @@
 %pal
  nprocs 40
 end
-* xyzfile 0 1 shkdc_c10.xyz
+* xyzfile 0 1 mol.xyz
