@@ -3,8 +3,8 @@ Contents
 
 This repository contains the following files:
 
--> conformers_ff.py 
--> molecule.xyz
+1. conformers_ff.py 
+2. molecule.xyz
 
 How to use it?
 ================
