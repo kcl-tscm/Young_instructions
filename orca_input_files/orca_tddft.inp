@@ -1,0 +1,15 @@
+#
+!B3LYP def2-TZVP RIJCOSX def2/J
+%maxcore 4500
+%SCF
+   MAXITER 1500
+END
+%TDDFT
+  NRoots 20
+  IRoot  10
+  TRIPLETS TRUE
+end
+%pal
+ nprocs 40
+end
+* xyzfile 0 1 mol.xyz
