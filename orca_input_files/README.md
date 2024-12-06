@@ -5,6 +5,7 @@ This repository contains the following files:
 
 1. conformers_ff.py 
 2. molecule.xyz
+3. orca *.inp files
 
 ## How to use conformers_ff ?
 
