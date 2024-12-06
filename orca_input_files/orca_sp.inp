@@ -1,0 +1,7 @@
+#
+!B3LYP def2-TZVP Grid5 FinalGrid6 sp
+%maxcore 4500
+%pal
+ nprocs 40
+end
+* xyzfile 0 1 shkdc_c10.xyz
