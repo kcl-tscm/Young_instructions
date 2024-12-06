@@ -31,5 +31,6 @@ Main blocks are defined for fine tuned parameters in experienced users.
 1. orca_sp.inp
 2. orca_geo_opt.inp
 3. orca_tddft.inp
-4. orca_
-5. orca_hess.inp
+4. orca_dlpno.inp: Concatenated job. The keyword RICOSX can be also added to speed up calculations. It needs corresponding basis set definition:
+   !DLPNO-CCSD(T) def2-pVTZ def2-pVTZ/C RIJCOSX NormalSCF NormalPNO PModel
+6. orca_hess.inp
