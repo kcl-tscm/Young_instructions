@@ -25,6 +25,8 @@ This guide will walk you through installing LAMMPS with the DeepMD library and s
 
 2. **Create and Activate Virtual Environment:**
    ```bash
+   mkdir deepmdkit
+   cd deepmdkit
    python3 -m venv envdeep
    source envdeep/bin/activate
    ```
@@ -62,7 +64,7 @@ This guide will walk you through installing LAMMPS with the DeepMD library and s
    cd source/
    mkdir build
    cd build
-   cmake -DENABLE_TENSORFLOW=TRUE -DUSE_TF_PYTHON_LIBS=TRUE -DCMAKE_INSTALL_PREFIX=/home/mmm0666/new_deepmdkit/envdeep ..
+   cmake -DENABLE_TENSORFLOW=TRUE -DUSE_TF_PYTHON_LIBS=TRUE -DCMAKE_INSTALL_PREFIX=/home/mmm0666/deepmdkit/envdeep ..
    make -j8
    make install
    make lammps
