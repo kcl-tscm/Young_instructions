@@ -4,7 +4,7 @@ This guide will walk you through installing LAMMPS with the DeepMD library and s
 
 **Prerequisites**
 
-* **Linux System:** This guide is designed for Linux environments.
+* **Cluster:** This guide is designed for Young.
 * **Module System:** Ensure you have a module system (e.g., `moduleload`) available.
 
 **Instructions**
