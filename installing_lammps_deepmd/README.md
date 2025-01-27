@@ -102,3 +102,10 @@ This guide will walk you through installing LAMMPS with the DeepMD library and s
 **Conclusion**
 
 You've successfully installed LAMMPS with DeepMD and other essential libraries. This setup allows you to perform molecular dynamics simulations using the power of machine learning.
+
+**Launching jobs in Young**
+
+To launch jobs in Young, please use the submission file job.sh and change the paths accordingly where deep-MD kit and lmp_mpi are stored.
+
+
+
