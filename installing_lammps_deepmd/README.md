@@ -1,5 +1,3 @@
-Absolutely! Here's a Markdown tutorial on installing LAMMPS with various libraries, along with explanations for path adjustments:
-
 **Installing LAMMPS with DeepMD and Other Libraries**
 
 This guide will walk you through installing LAMMPS with the DeepMD library and several other essential packages. We'll also discuss how to adjust paths for personalized setups.
