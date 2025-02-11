@@ -46,6 +46,9 @@ This guide will walk you through installing LAMMPS with the DeepMD library and s
    python3 -m pip install tensorflow
    pip uninstall urllib3
    pip install "urllib3<2.0"
+   pip install cython
+   pip install numpy  
+   pip install pybind11
    ```
 
 5. **Clone DeepMD Repository:**
@@ -72,26 +75,36 @@ This guide will walk you through installing LAMMPS with the DeepMD library and s
    cd ..
    cd ..
    ```
+8. **Clone Plumed and install plumed as independent library**
+   ```bash
+      git clone https://github.com/plumed/plumed2.git
+      cd plumed2
+      ./configure --prefix=$HOME/new_deepmdkit/envdeep CXX=mpic++ CC=mpicc FC=mpif90 --enable-pycv
+      make
+      make install
+   ```
 
-8. **Clone LAMMPS Repository:**
+10. **Clone LAMMPS Repository:**
    ```bash
    git clone -b release https://github.com/lammps/lammps.git mylammps
    ```
 
-9. **Integrate DeepMD into LAMMPS:**
+11. **Integrate DeepMD into LAMMPS:**
    ```bash
    cp -r deepmd-kit/source/build/USER-DEEPMD/ mylammps/src/
    cd mylammps/src/
 
    make yes-kspace
    make yes-extra-fix
-   make yes-user-deepmd
+   make yes-user-deepm
+   make yes-plumed
+   make lib-plumed args="-p $HOME/new_deepmdkit/envdeep"
    make mpi -j4
    ```
 
 **Path Adjustments Explanation:**
 
-*   In the instructions, we replaced `/home/mmm0666` with `$HOME`. This ensures the paths are adjusted to your specific system.
+*   In the instructions, we use `$HOME`. This ensures the paths are adjusted to your specific system.
 *   This is crucial because the environment variables `PATH` and `PYTHONPATH` need to point to the correct locations of the installed libraries and executables.
 
 **Important Note:**
