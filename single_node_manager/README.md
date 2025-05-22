@@ -31,7 +31,7 @@ The output from each calculation is handled by your `./CoS` program, just as it 
 
 4.  **Submit the Job:** Use the `sbatch` command to submit your script to the Slurm scheduler on Young:
     ```bash
-    sbatch job.sh
+    qsub job.sh
     ```
 
 ---
