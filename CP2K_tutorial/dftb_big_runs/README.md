@@ -15,3 +15,15 @@ These commands are designed to prepare your environment, create a dedicated soft
 | `conda create --name cp2k_env` | **Creates Environment.** Creates a new, isolated Conda environment named `cp2k_env`. |
 | `conda activate cp2k_env` | **Activates Environment.** Switches the terminal session into the new `cp2k_env` environment. |
 | `conda install -c conda-forge cp2k=2024.2=*openblas_openmpi*` | **Installs CP2K.** Installs the specified version of CP2K from the `conda-forge` channel, optimized with OpenBLAS and OpenMPI. |
+
+## How to Run CP2K
+
+Once the installation is complete, follow these steps to use CP2K:
+
+### 1. Activate the Environment
+
+You must always activate the specific Conda environment where CP2K was installed before you can run the program.
+
+```bash
+conda activate cp2k_ant
+```
