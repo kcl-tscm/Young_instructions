@@ -6,15 +6,19 @@ This tutorial explains how to install CP2K using the provided set of commands, w
 
 These commands are designed to prepare your environment, create a dedicated software space, and install the specific CP2K version you want.
 
+## CP2K Installation Commands with Custom Path
+
+This set of commands is tailored for HPC systems, using a module system and creating the Conda environment in a specific non-default directory (`/home/mmmXXXX/Scratch/conda_envs`).
+
 | Command | Explanation |
 | :--- | :--- |
-| `module purge` | **Cleans Environment.** Removes any previously loaded software modules to prevent conflicts. |
-| `module load python/miniconda3/24.3.0-0` | **Loads Conda.** Uses the HPC's module system to make the `conda` command available in your session. |
-| `source $UCL_CONDA_PATH/etc/profile.d/conda.sh` | **Initializes Conda.** Activates necessary shell functions for `conda activate` to work. |
-| `ls` | **List Files.** Standard command to list contents of the current directory (used as a check). |
-| `conda create --name cp2k_env` | **Creates Environment.** Creates a new, isolated Conda environment named `cp2k_env`. |
-| `conda activate cp2k_env` | **Activates Environment.** Switches the terminal session into the new `cp2k_env` environment. |
-| `conda install -c conda-forge cp2k=2024.2=*openblas_openmpi*` | **Installs CP2K.** Installs the specified version of CP2K from the `conda-forge` channel, optimized with OpenBLAS and OpenMPI. |
+| `module purge` | **Cleans Environment.** Removes any previously loaded software modules to avoid conflicts. |
+| `module load python/miniconda3/24.3.0-0` | **Loads Conda.** Uses the module system to make the `conda` command available. |
+| `source $UCL_CONDA_PATH/etc/profile.d/conda.sh` | **Initializes Conda.** Sets up the necessary shell functions for Conda environment management (like `conda activate`). |
+| `ls` | **List Files.** A simple check to confirm the shell is responsive. |
+| `conda create -p /home/mmmXXXX/Scratch/conda_envs/cp2k_env` | **Creates Environment.** Creates the isolated environment in your desired **Scratch** location using the `-p` (prefix) flag, naming the folder `cp2k_env`. |
+| `conda activate /home/mmmXXXX/Scratch/conda_envs/cp2k_env` | **Activates Environment.** Activates the environment using its **full path** because it was created outside of the default Conda environment directory. |
+| `conda install -c conda-forge cp2k=2024.2=*openblas_openmpi*` | **Installs CP2K.** Installs the specific version from the `conda-forge` channel, using the build optimized for **OpenBLAS** and **OpenMPI** for high performance. |
 
 ## How to Run CP2K
 
