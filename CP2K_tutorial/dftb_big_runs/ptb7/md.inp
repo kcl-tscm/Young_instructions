@@ -1,0 +1,91 @@
+&GLOBAL
+  PRINT_LEVEL LOW
+  PROJECT ptb7_md
+  RUN_TYPE MD
+  EXTENDED_FFT_LENGTHS
+&END GLOBAL
+
+&FORCE_EVAL
+  &DFT
+    &QS
+      METHOD DFTB
+      &DFTB
+        DISPERSION T
+        DO_EWALD F
+        ORTHOGONAL_BASIS F
+        SELF_CONSISTENT T
+        &PARAMETER
+          D3_SCALING 1.0 1.5 1.5
+          DISPERSION_PARAMETER_FILE /home/mmm0666/Scratch/conda_envs/cp2k_env/share/cp2k/data/dftd3.dat
+          DISPERSION_TYPE D3
+          PARAM_FILE_PATH /home/mmm0666/Scratch/cp2k_anton_2024/3ob-3.1.0/skfiles
+	  SK_FILE C C C-C.skf
+	  SK_FILE S S S-S.skf
+	  SK_FILE O O O-O.skf
+	  SK_FILE H H H-H.skf
+	  SK_FILE F F F-F.skf
+	  SK_FILE C S C-S.skf
+	  SK_FILE S C S-C.skf
+	  SK_FILE S O S-O.skf
+	  SK_FILE O S O-S.skf
+	  SK_FILE S F S-F.skf
+	  SK_FILE F S F-S.skf
+	  SK_FILE S H S-H.skf
+	  SK_FILE H S H-S.skf
+	  SK_FILE C O C-O.skf
+	  SK_FILE O C O-C.skf
+	  SK_FILE O H O-H.skf
+	  SK_FILE H O H-O.skf
+	  SK_FILE C H C-H.skf
+	  SK_FILE H C H-C.skf
+	  SK_FILE C F C-F.skf
+	  SK_FILE F C F-C.skf
+	  SK_FILE F H F-H.skf
+	  SK_FILE H F H-F.skf
+	  SK_FILE O F O-F.skf
+	  SK_FILE F O F-O.skf
+        &END PARAMETER
+      &END DFTB
+    &END QS
+    &SCF
+      MAX_SCF 150
+      SCF_GUESS ATOMIC
+      EPS_SCF 1.0E-5
+    &END SCF
+  &END DFT
+  &SUBSYS
+    &TOPOLOGY
+      COORD_FILE_FORMAT  xyz
+      COORD_FILE_NAME  mol.xyz
+      &CENTER_COORDINATES
+      &END CENTER_COORDINATES
+     &END TOPOLOGY
+    &CELL
+      ABC 80.0 80.0 200.0
+      PERIODIC NONE
+    &END CELL
+  &END SUBSYS
+&END FORCE_EVAL
+&MOTION
+  &PRINT
+     &TRAJECTORY
+        &EACH
+          MD 5
+        &END EACH
+     &END TRAJECTORY
+  &END PRINT
+  &MD
+   ENSEMBLE NVT
+   TIMESTEP 1.0
+   STEPS    10000
+   TEMPERATURE 450 
+   &THERMOSTAT
+     &NOSE
+       LENGTH 3
+       YOSHIDA 3
+       TIMECON 1000
+       MTS 2
+     &END NOSE
+   &END
+ &END MD
+&END MOTION
