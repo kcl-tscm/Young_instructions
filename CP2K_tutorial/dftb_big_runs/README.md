@@ -27,3 +27,32 @@ You must always activate the specific Conda environment where CP2K was installed
 ```bash
 conda activate cp2k_ant
 ```
+### 2. Execute CP2K
+
+Run the CP2K executable with your input file.
+
+1. The -i flag specifies the input file.
+2. The -o flag specifies the output file (where the results will be written).
+
+```bash
+
+cp2k -i your_input_file.inp -o your_output_file.out
+```
+
+Note: On an HPC system, you will typically submit this execution command within a batch script (PBS) to utilize multiple cores/nodes efficiently.
+This is included in each of the created folders. 
+
+### 3. Deactivate the Environment
+
+When you are finished running your job or session, it is good practice to leave the dedicated environment.
+
+```bash
+
+conda deactivate
+```
+this is only needed for testing the executable. For the case of running in the scheduler, this command is not needed to be used.
+
+
+
+
+
